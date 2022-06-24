@@ -1,10 +1,19 @@
+import { DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
+
+import '@vime/core/themes/default.css'
 
 export function Video(){
   return(
     <div className="flex-1">
       <div className="bg-black flex justify-center">
-        <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video"></div>
+        <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
+          <Player>
+            <Youtube videoId="bvWRMAU6V-c">
+            </Youtube>
+            <DefaultUi />
+          </Player>
+        </div>
       </div>
       <div className="p-8 max-w-[1100px] mx-auto">
         <div className="flex items-start gap-16"> 
@@ -62,7 +71,20 @@ export function Video(){
             </div>
           </a>
 
-          <a href=""></a>
+          <a href="">
+            <div className="bg-green-700 h-full p-6 flex items-center">
+              <FileArrowDown size={40} />
+            </div>
+            <div className="py-6 leading-relaxed">
+              <strong className="text-2xl">Material complementar</strong>
+              <p className="text-sm text-gray-200 mt-2">
+                Acesse o material complementar para acelerar o seu desenvolvimento
+              </p>
+            </div>
+            <div className="h-full p-6 flex items-center">
+              <CaretRight size={24} />
+            </div>
+          </a>
           
         </div>
       </div>
