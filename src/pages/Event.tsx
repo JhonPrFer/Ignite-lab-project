@@ -1,9 +1,20 @@
-import { Header } from "../components/Header/Header"
+import { useParams } from "react-router-dom";
+import { Header } from "../components/Header/Header";
+import { SideBar } from "../components/SideBar/SideBar";
+import { Video } from "../components/Video/Video";
+
 
 export function Event(){
+  const { slug } = useParams<{slug: string}>()
   return(
-    <>
-    <Header />
-    </>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex flex-1">
+        { slug 
+        ? <Video lessonSlug={slug} />
+        : <div className="flex-1" />}
+        <SideBar />
+      </main>
+    </div>
   )
 }
